@@ -1,0 +1,224 @@
+"use client"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import Link from "next/link"
+
+export default function HomePage() {
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Header */}
+      <header className="border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center">
+              <h1 className="text-2xl font-bold text-black">VoovAutos</h1>
+            </div>
+            <nav className="hidden md:flex space-x-8">
+              <Link href="/dealers" className="text-gray-600 hover:text-black">
+                Dealers
+              </Link>
+              <Link href="/individuals" className="text-gray-600 hover:text-black">
+                Individuals
+              </Link>
+              <Link href="/browse" className="text-gray-600 hover:text-black">
+                Browse Cars
+              </Link>
+            </nav>
+            <div className="flex space-x-4">
+              <Button variant="outline">Sign In</Button>
+              <Button>Get Started</Button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-5xl font-bold text-black mb-6">
+            Buy & Sell Cars Online
+          </h2>
+          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            The premier destination for connecting car dealers and individuals. 
+            List your inventory, find your dream car, and manage everything in one place.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="text-lg px-8 py-4">
+              Start Selling
+            </Button>
+            <Button size="lg" variant="outline" className="text-lg px-8 py-4">
+              Browse Cars
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h3 className="text-3xl font-bold text-black mb-4">
+              Two Powerful Portals
+            </h3>
+            <p className="text-lg text-gray-600">
+              Whether you're a dealer or an individual, we have the perfect solution for you
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Dealers Portal */}
+            <Card className="border-2 border-gray-200 hover:border-black transition-colors">
+              <CardHeader>
+                <CardTitle className="text-2xl">Dealers Portal</CardTitle>
+                <CardDescription className="text-lg">
+                  Professional tools for automotive dealers
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                    <div>
+                      <h4 className="font-semibold">Small Dealer</h4>
+                      <p className="text-sm text-gray-600">15 listings</p>
+                    </div>
+                    <Badge variant="secondary">$199/month</Badge>
+                  </div>
+                  <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                    <div>
+                      <h4 className="font-semibold">Premium Dealer</h4>
+                      <p className="text-sm text-gray-600">40 listings</p>
+                    </div>
+                    <Badge variant="secondary">$399/month</Badge>
+                  </div>
+                  <div className="flex justify-between items-center p-4 bg-black text-white rounded-lg">
+                    <div>
+                      <h4 className="font-semibold">Platinum Dealer</h4>
+                      <p className="text-sm text-gray-300">100 listings + videos</p>
+                    </div>
+                    <Badge variant="outline" className="text-white border-white">$499/month</Badge>
+                  </div>
+                </div>
+                <ul className="space-y-2 text-sm">
+                  <li>• Unique dealer URL</li>
+                  <li>• Mass inventory upload</li>
+                  <li>• Featured listings</li>
+                  <li>• Customer messaging inbox</li>
+                  <li>• Call & text integration</li>
+                </ul>
+                <Button className="w-full" asChild>
+                  <Link href="/dealers">Learn More</Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Individuals Portal */}
+            <Card className="border-2 border-gray-200 hover:border-black transition-colors">
+              <CardHeader>
+                <CardTitle className="text-2xl">Individuals Portal</CardTitle>
+                <CardDescription className="text-lg">
+                  Simple tools for private sellers and buyers
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                    <div>
+                      <h4 className="font-semibold">Free Listing</h4>
+                      <p className="text-sm text-gray-600">7 days active</p>
+                    </div>
+                    <Badge variant="secondary">Free</Badge>
+                  </div>
+                  <div className="flex justify-between items-center p-4 bg-black text-white rounded-lg">
+                    <div>
+                      <h4 className="font-semibold">Extended Listing</h4>
+                      <p className="text-sm text-gray-300">60 days active</p>
+                    </div>
+                    <Badge variant="outline" className="text-white border-white">$20</Badge>
+                  </div>
+                </div>
+                <ul className="space-y-2 text-sm">
+                  <li>• Free account creation</li>
+                  <li>• Direct messaging</li>
+                  <li>• Listing manager</li>
+                  <li>• Save vehicles & alerts</li>
+                  <li>• Price change notifications</li>
+                  <li>• New listing notifications</li>
+                </ul>
+                <Button className="w-full" asChild>
+                  <Link href="/individuals">Get Started Free</Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-3xl font-bold text-black">10,000+</div>
+              <div className="text-gray-600">Active Listings</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-black">500+</div>
+              <div className="text-gray-600">Dealers</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-black">25,000+</div>
+              <div className="text-gray-600">Users</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-black">98%</div>
+              <div className="text-gray-600">Satisfaction</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-black text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <h4 className="text-xl font-bold mb-4">VoovAutos</h4>
+              <p className="text-gray-400">
+                The premier destination for buying and selling cars online.
+              </p>
+            </div>
+            <div>
+              <h5 className="font-semibold mb-4">For Dealers</h5>
+              <ul className="space-y-2 text-gray-400">
+                <li>Membership Plans</li>
+                <li>Mass Upload</li>
+                <li>Featured Listings</li>
+                <li>Analytics</li>
+              </ul>
+            </div>
+            <div>
+              <h5 className="font-semibold mb-4">For Individuals</h5>
+              <ul className="space-y-2 text-gray-400">
+                <li>Free Listings</li>
+                <li>Save Vehicles</li>
+                <li>Price Alerts</li>
+                <li>Messaging</li>
+              </ul>
+            </div>
+            <div>
+              <h5 className="font-semibold mb-4">Support</h5>
+              <ul className="space-y-2 text-gray-400">
+                <li>Help Center</li>
+                <li>Contact Us</li>
+                <li>Terms of Service</li>
+                <li>Privacy Policy</li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+            <p>&copy; 2024 VoovAutos. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
